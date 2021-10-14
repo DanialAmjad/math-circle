@@ -25,17 +25,11 @@ jobs:
           command: npm install
       - save_cache: 
           key: dependency-cache-{{checksum "package.json"}}
-          path: 
+          paths: 
             - ./node_modules
       - run:
           name: test
           command: npm test
-      - store_artifacts:
-          path: tests-result.yml
-          prefix: tests
-      - store_artifacts:
-          path: coverage
-          prefix: coverage
 
 
 
